@@ -6,4 +6,6 @@ before_install:
   - docker build -t wayne19/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run wayne19/docker-react npm run test -- --coverage
+  - docker run -e CI=true wayne19/docker-react npm run test
+
+language: generic
